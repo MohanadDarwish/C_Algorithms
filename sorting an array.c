@@ -19,7 +19,7 @@ int main()
     
     printf("Hello World\n");
     char i=0;
-    char arr[7]={3,2,2,4,9,7,1};
+    char arr[7]={9,8,7,6,5,4,3};
     start = clock();
     bubblesort(arr,sizeof arr);
     end = clock();
@@ -33,15 +33,14 @@ int main()
 void bubblesort(char* arr1,char size)
 {
     char i=0,j=0,Flag1=0,Flag2=0;
-    for (;i<size;i++) {
-        /* code */
+    for (;i<size-1;i++) {
         for(j=0;j<size-1;j++)
         {
             if(arr1[j]>arr1[j+1])
             {
-                swap( arr1+j , arr1+(1+j) );
+                swap( arr1+j , arr1+(j+1) );
                 Flag1=1;
-            }else if(Flag1 ==0){
+            }else if( (Flag1 ==0) && (j==size-1) ){
                 Flag2=1;
                 break;
             }
