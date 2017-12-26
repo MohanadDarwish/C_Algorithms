@@ -7,18 +7,28 @@ Write your code in this editor and press "Run" button to compile and execute it.
 *******************************************************************************/
 
 #include <stdio.h>
-
+#include <time.h>
+     
 void swap(char* ,char*);
 void bubblesort(char*,char);
 
 int main()
 {
+    clock_t start, end;
+    double cpu_time_used;
+    start = clock();
+///////////////////////////////////////////////////////////// 
+    
     printf("Hello World\n");
     char i=0;
     char arr[7]={3,2,2,4,9,7,1};
     bubblesort(arr,sizeof arr);
     while(i<7) printf("arr[%d] = %d \n",i,arr[i++]);
 
+////////////////////////////////////////////////////////////
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf(" time = %u",cpu_time_used);
     return 0;
 }
 void bubblesort(char* arr1,char size)
