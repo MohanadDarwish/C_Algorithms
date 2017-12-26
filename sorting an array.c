@@ -27,7 +27,7 @@ int main()
 
 
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf(" time = %u",cpu_time_used);
+    printf(" time = %lf",cpu_time_used);
     return 0;
 }
 void bubblesort(char* arr1,char size)
